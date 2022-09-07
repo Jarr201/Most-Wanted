@@ -190,7 +190,14 @@ function searchByGender(people) {
 }
 
 function searchByEyeColor(people) {
+    let eyeColor = promptFor("What is the person's eye color?", chars);
 
+    let foundPerson = people.filter(function (person) {
+        if (person.eyeColor === eyeColor) {
+            return true;
+        }
+    });
+    return foundPerson;
 }
 
 function searchByOccupation(people) {
@@ -209,6 +216,6 @@ function searchByDateOfBirth(people) {
 
 }
 
-function searchByTraits(people) {
+function searchByTraitsTwo(people) {
 
 }
