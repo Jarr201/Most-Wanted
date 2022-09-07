@@ -208,3 +208,7 @@ function searchByWeight(people) {
 function searchByDateOfBirth(people) {
 
 }
+
+function searchByTraits(people) {
+
+}
