@@ -212,11 +212,25 @@ function searchByEyeColor(people) {
 }
 
 function searchByOccupation(people) {
+    let occupation = promptFor("What is the person's occupation?", chars);
 
+    let foundPerson = people.filter(function (person) {
+        if (person.occupation === occupation) {
+            return true;
+        }
+    });
+    return foundPerson;
 }
 
 function searchByHeight(people) {
+    let height = promptFor("What is the person's height?", chars);
 
+    let foundPerson = people.filter(function (person) {
+        if (person.height === height) {
+            return true;
+        }
+    });
+    return foundPerson;
 }
 
 function searchByWeight(people) {
