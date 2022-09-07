@@ -185,8 +185,11 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
-function searchByTrait(people) {
-    
+function searchByTraits(people) {
+    let userInput = prompt("What trait would you like to search for?");
+        if (userInput === gender) {
+            searchByGender(people)
+    }
 }
 
 function searchByGender(people) {
