@@ -53,7 +53,7 @@ function app(people) {
  */
 function mainMenu(person, people) {
     // A check to verify a person was found via searchByName() or searchByTrait()
-    if (!person[0]) {
+    if (!person) {
         alert("Could not find that individual.");
         // Restarts app() from the very beginning
         return app(people);
@@ -140,6 +140,12 @@ function displayPeople(people) {
 function displayPerson(person) {
     let personInfo = `First Name: ${person.firstName}\n`;
     personInfo += `Last Name: ${person.lastName}\n`;
+    personInfo += `Gender: ${person.gender}\n`;
+    personInfo += `Height: ${person.height}\n`;
+    personInfo += `Weight: ${person.weight}\n`;
+    personInfo += `Eye Color: ${person.eyeColor}\n`;
+    personInfo += `Occupation: ${person.occupation}\n`;
+    // personInfo += `Date of Birth: ${person.dob}\n`;
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
@@ -186,70 +192,66 @@ function chars(input) {
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
 function searchByTraits(people) {
-    let userInput = prompt("What trait would you like to search for?");
-        if (userInput === gender) {
-            searchByGender(people)
-    }
+    let searchResults;
+    let userInput = prompt(
+        "What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?"
+    );
+    userInput = userInput.toLowerCase();
+    switch(userInput) {
+        case "gender":
+            searchResults = searchByGender(people);
+            break;
+        // case "date of birth": 
+        //     searchResults = searchByDateOfBirth(people);
+        //     if(searchResults.length === 0){
+        //         alert('No match for your search')
+        //         app(people)
+        //     }else
+        //         displayTraitPeople(searchResults)
+        //         break;
+        case "weight":
+            searchResults = searchByWeight(people);
+            if(searchResults.length === 0){
+                alert('No match for your search')
+                app(people)
+            }else
+                displayTraitPeople(searchResults)
+                break;
+        case "height":
+            searchResults = searchByHeight(people);
+            if(searchResults.length === 0){
+                alert('No match for your search')
+                app(people)
+            }else
+                displayTraitPeople(searchResults)
+                break;
+        case "eye color":
+            searchResults = searchByEyeColor(people);
+            if(searchResults.length === 0){
+                alert('No match for your search')
+                app(people)
+            }else
+                displayTraitPeople(searchResults)
+                break;
+        case "occupation":
+            searchResults = searchByOccupation(people);
+            if(searchResults.length === 0){
+                alert('No match for your search')
+                app(people)
+            }else
+                displayTraitPeople(searchResults)
+                break;
+        default:
+            alert("Invalid Input");
+           
+            break;   
+    } 
+    if(searchResults.length === 0){
+        alert('No match for your search')
+        app(people)
+        return searchResults;
 }
-
-    // let searchResults;
-    // let userInput = prompt(
-    //     "What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?"
-    // );
-    // userInput = userInput.toLowerCase();
-    // switch(userInput) {
-    //     case "gender":
-    //         searchResults = searchByGender(people);
-    //         if(searchResults.length === 0){
-    //             alert('No match for your search')
-    //             app(people)
-    //         }else
-    //             displayTraitPeople(searchResults)
-    //         break;
-    //     case "date of birth": 
-    //         searchResults = searchByDateOfBirth(people);
-    //         if(searchResults.length === 0){
-    //             alert('No match for your search')
-    //             app(people)
-    //         }else
-    //             displayTraitPeople(searchResults)
-    //             break;
-    //     case "weight":
-    //         searchResults = searchByWeight(people);
-    //         if(searchResults.length === 0){
-    //             alert('No match for your search')
-    //             app(people)
-    //         }else
-    //             displayTraitPeople(searchResults)
-    //             break;
-    //     case "height":
-    //         searchResults = searchByHeight(people);
-    //         if(searchResults.length === 0){
-    //             alert('No match for your search')
-    //             app(people)
-    //         }else
-    //             displayTraitPeople(searchResults)
-    //             break;
-    //     case "eye color":
-    //         searchResults = searchByEyeColor(people);
-    //         if(searchResults.length === 0){
-    //             alert('No match for your search')
-    //             app(people)
-    //         }else
-    //             displayTraitPeople(searchResults)
-    //             break;
-    //     case "occupation":
-    //         searchResults = searchByOccupation(people);
-    //         if(searchResults.length === 0){
-    //             alert('No match for your search')
-    //             app(people)
-    //         }else
-    //             displayTraitPeople(searchResults)
-    //             break;
-    //     default:
-    //         alert("Invalid Input");
-    //         app(people);
-    //         break;
+}    
 
 function searchByGender(people) {
     let gender = promptFor("What is the person's gender?", chars);
@@ -306,7 +308,4 @@ function searchByWeight(people) {
     return foundPerson;
 }
 
-function searchByDateOfBirth(people) {
-
-}
-
+// function searchByDateOfBirth(people) {}
