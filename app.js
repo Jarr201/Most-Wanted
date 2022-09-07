@@ -194,5 +194,9 @@ function searchByEyeColor(people) {
 }
 
 function searchByOccupation(people) {
-    
+
+}
+
+function searchByHeight(people) {
+
 }
