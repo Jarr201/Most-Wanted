@@ -47,7 +47,7 @@ function app(people) {
  * After finding a single person, we pass in the entire person-object that we found,
  * as well as the entire original dataset of people. We need people in order to find
  * descendants and other information that the user may want.
- * @param {Object[]} person     A singular object inside of an array.
+ * @param {Object} person     A singular object inside of an array.
  * @param {Array} people        A collection of person objects.
  * @returns {String}            The valid string input retrieved from the user.
  */
