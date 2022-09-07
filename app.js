@@ -66,7 +66,6 @@ function mainMenu(person, people) {
         case "info":
             //! TODO #1: Utilize the displayPerson function //////////////////////////////////////////
             // HINT: Look for a person-object stringifier utility function to help
-            // JSON.Stringify()???
             let personInfo = displayPerson(person[0]);
             alert(personInfo);
             break;
@@ -134,7 +133,7 @@ function displayPeople(people) {
 // End of displayPeople()
 
 /**
- * This function will be useful for STRINGIFYING a person-object's properties
+ * This function will be useful for STRINGIFYING a person-object's properties ////////////////////////////////////////////////////////
  * in order to easily send the information to the user in the form of an alert().
  * @param {Object} person       A singular object.
  */
@@ -201,6 +200,7 @@ function searchByTraits(people) {
     switch(userInput) {
         case "gender":
             searchResults = searchByGender(people);
+            displayPeople(people)
             break;
         // case "date of birth": 
         //     searchResults = searchByDateOfBirth(people);
@@ -212,39 +212,22 @@ function searchByTraits(people) {
         //         break;
         case "weight":
             searchResults = searchByWeight(people);
-            if(searchResults.length === 0){
-                alert('No match for your search')
-                app(people)
-            }else
-                displayTraitPeople(searchResults)
+            displayPeople(people)
                 break;
         case "height":
             searchResults = searchByHeight(people);
-            if(searchResults.length === 0){
-                alert('No match for your search')
-                app(people)
-            }else
-                displayTraitPeople(searchResults)
+            displayPeople(people)
                 break;
         case "eye color":
             searchResults = searchByEyeColor(people);
-            if(searchResults.length === 0){
-                alert('No match for your search')
-                app(people)
-            }else
-                displayTraitPeople(searchResults)
+            displayPeople(people)
                 break;
         case "occupation":
             searchResults = searchByOccupation(people);
-            if(searchResults.length === 0){
-                alert('No match for your search')
-                app(people)
-            }else
-                displayTraitPeople(searchResults)
+            displayPeople(people)
                 break;
         default:
             alert("Invalid Input");
-           
             break;   
     } 
     if(searchResults.length === 0){
