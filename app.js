@@ -296,7 +296,14 @@ function searchByWeight(people) {
 // function searchByDateOfBirth(people) {}
 
 function findPersonFamily(people) {
-
+    let personFamily
+    
+    let foundPerson = people.filter(function (person) {
+        if (person.parents) {
+            return true;
+        }
+    });
+    return foundPerson;
 }
 
 function findPersonDescendants(people) {
