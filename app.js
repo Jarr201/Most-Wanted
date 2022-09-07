@@ -66,6 +66,7 @@ function mainMenu(person, people) {
         case "info":
             //! TODO #1: Utilize the displayPerson function //////////////////////////////////////////
             // HINT: Look for a person-object stringifier utility function to help
+            // JSON.Stringify()???
             let personInfo = displayPerson(person[0]);
             alert(personInfo);
             break;
