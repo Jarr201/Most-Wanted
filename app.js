@@ -192,6 +192,65 @@ function searchByTraits(people) {
     }
 }
 
+    // let searchResults;
+    // let userInput = prompt(
+    //     "What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?"
+    // );
+    // userInput = userInput.toLowerCase();
+    // switch(userInput) {
+    //     case "gender":
+    //         searchResults = searchByGender(people);
+    //         if(searchResults.length === 0){
+    //             alert('No match for your search')
+    //             app(people)
+    //         }else
+    //             displayTraitPeople(searchResults)
+    //         break;
+    //     case "date of birth": 
+    //         searchResults = searchByDateOfBirth(people);
+    //         if(searchResults.length === 0){
+    //             alert('No match for your search')
+    //             app(people)
+    //         }else
+    //             displayTraitPeople(searchResults)
+    //             break;
+    //     case "weight":
+    //         searchResults = searchByWeight(people);
+    //         if(searchResults.length === 0){
+    //             alert('No match for your search')
+    //             app(people)
+    //         }else
+    //             displayTraitPeople(searchResults)
+    //             break;
+    //     case "height":
+    //         searchResults = searchByHeight(people);
+    //         if(searchResults.length === 0){
+    //             alert('No match for your search')
+    //             app(people)
+    //         }else
+    //             displayTraitPeople(searchResults)
+    //             break;
+    //     case "eye color":
+    //         searchResults = searchByEyeColor(people);
+    //         if(searchResults.length === 0){
+    //             alert('No match for your search')
+    //             app(people)
+    //         }else
+    //             displayTraitPeople(searchResults)
+    //             break;
+    //     case "occupation":
+    //         searchResults = searchByOccupation(people);
+    //         if(searchResults.length === 0){
+    //             alert('No match for your search')
+    //             app(people)
+    //         }else
+    //             displayTraitPeople(searchResults)
+    //             break;
+    //     default:
+    //         alert("Invalid Input");
+    //         app(people);
+    //         break;
+
 function searchByGender(people) {
     let gender = promptFor("What is the person's gender?", chars);
 
