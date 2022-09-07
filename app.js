@@ -234,7 +234,14 @@ function searchByHeight(people) {
 }
 
 function searchByWeight(people) {
+    let weight = promptFor("What is the person's weight?", chars);
 
+    let foundPerson = people.filter(function (person) {
+        if (person.weight === weight) {
+            return true;
+        }
+    });
+    return foundPerson;
 }
 
 function searchByDateOfBirth(people) {
