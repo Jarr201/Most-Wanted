@@ -188,3 +188,11 @@ function chars(input) {
 function searchByGender(people) {
 
 }
+
+function searchByEyeColor(people) {
+
+}
+
+function searchByOccupation(people) {
+    
+}
