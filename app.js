@@ -294,3 +294,11 @@ function searchByWeight(people) {
 }
 
 // function searchByDateOfBirth(people) {}
+
+function findPersonFamily(people) {
+
+}
+
+function findPersonDescendants(people) {
+    
+}
