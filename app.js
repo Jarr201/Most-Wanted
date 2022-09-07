@@ -228,11 +228,12 @@ function searchByTraits(people) {
                 break;
         default:
             alert("Invalid Input");
-            break;   
-    } 
+            break};   
+     
     if(searchResults.length === 0){
         alert('No match for your search')
         app(people)
+    } else {
         return searchResults;
 }
 }    
