@@ -200,3 +200,7 @@ function searchByOccupation(people) {
 function searchByHeight(people) {
 
 }
+
+function searchByWeight(people) {
+
+}
