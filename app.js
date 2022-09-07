@@ -185,8 +185,19 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
-function searchByGender(people) {
+function searchByTrait(people) {
+    
+}
 
+function searchByGender(people) {
+    let gender = promptFor("What is the person's gender?", chars);
+
+    let foundPerson = people.filter(function (person) {
+        if (person.gender === gender) {
+            return true;
+        }
+    });
+    return foundPerson;
 }
 
 function searchByEyeColor(people) {
@@ -216,6 +227,3 @@ function searchByDateOfBirth(people) {
 
 }
 
-function searchByTraitsTwo(people) {
-
-}
