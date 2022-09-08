@@ -186,8 +186,8 @@ function yesNo(input) {
  * @returns {Boolean}           Default validation -- no logic yet.
  */
 function chars(input) {
-    return input;
-    // return true; // Default validation only
+    let input = searchResults
+    return true; // Default validation only
 }
 // End of chars()
 
@@ -196,7 +196,7 @@ function chars(input) {
 
 function searchByTraits(people) {
     let searchResults;
-    let userInput = prompt("What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?", chars);
+    let userInput = prompt("What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?");
     userInput = userInput.toLowerCase();
     switch(userInput) {
         case "gender":
@@ -294,18 +294,30 @@ function searchByWeight(people) {
 function searchByDateOfBirth(people) {
     let dob = promptFor("Whatis the date of birth of the person your searching for? Please eneter month(2-digit)/day(2-digit)/year(4-digit)", chars)
     
-    let foundperson = people.filter(function (person) {
+    let foundPerson = people.filter(function (person) {
         if (person.dob == dob) {
             return true;
         }
     })
-    return foundperson
+    return foundPerson
 }
 
 function findPersonFamily(people) {
-    people = displayPerson(id)
+    foundPerson
 }
 
-function findPersonDescendants(people) {
+function findPersonDescendants(person, people) {
+    
+}
+
+function findSpouse(person) {
+
+}
+
+function findChildren(person) {
+
+}
+
+function findSiblings(person) {
     
 }
