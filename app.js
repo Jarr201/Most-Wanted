@@ -147,7 +147,7 @@ function displayPerson(person) {
     personInfo += `Occupation: ${person.occupation}\n`;
     personInfo += `Date of Birth: ${person.dob}\n`;
     personInfo += `id: ${person.id}\n`;
-    // personInfo += `Current Spouse: ${person.currentSpouse}\n`;
+    personInfo += `Current Spouse: ${person.currentSpouse}\n`;
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
@@ -186,7 +186,6 @@ function yesNo(input) {
  * @returns {Boolean}           Default validation -- no logic yet.
  */
 function chars(input) {
-    let input = searchResults
     return true; // Default validation only
 }
 // End of chars()
@@ -302,16 +301,23 @@ function searchByDateOfBirth(people) {
     return foundPerson
 }
 
-function findPersonFamily(people) {
-    foundPerson
-}
+// function findPersonFamily(people) {
+//     foundPerson
+// }
 
 function findPersonDescendants(person, people) {
     
 }
 
 function findSpouse(person) {
-
+    for (let spouse = 0; spouse < spouses.length; spouse++) {
+        if (person.id == person.currentSpouse) {
+            return "Married to no one.";
+        }
+        else if (person.id == spouses[spouse].currentSpouse) {
+            return spouses[spouse];
+        }
+    }
 }
 
 function findChildren(person) {
@@ -319,5 +325,5 @@ function findChildren(person) {
 }
 
 function findSiblings(person) {
-    
+
 }
