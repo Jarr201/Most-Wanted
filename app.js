@@ -3,12 +3,10 @@
     Description: Most Wanted Starter Code
 */
 //////////////////////////////////////////* Beginning Of Starter Code *//////////////////////////////////////////
-
 "use strict";
 //? Utilize the hotkey to hide block level comment documentation
 ////* Mac: Press "CMD"+"K" and then "CMD"+"/"
 ////* PC: Press "CTRL"+"K" and then "CTRL"+"/"
-
 /**
  * This is the main logic function being called in index.html.
  * It operates as the entry point for our entire application and allows
@@ -42,7 +40,6 @@ function app(people) {
     mainMenu(searchResults, people);
 }
 // End of app()
-
 /**
  * After finding a single person, we pass in the entire person-object that we found,
  * as well as the entire original dataset of people. We need people in order to find
@@ -94,7 +91,6 @@ function mainMenu(person, people) {
     }
 }
 // End of mainMenu()
-
 /**
  * This function is used when searching the people collection by
  * a person-object's firstName and lastName properties.
@@ -104,7 +100,6 @@ function mainMenu(person, people) {
 function searchByName(people) {
     let firstName = promptFor("What is the person's first name?", chars);
     let lastName = promptFor("What is the person's last name?", chars);
-
     // The foundPerson value will be of type Array. Recall that .filter() ALWAYS returns an array.
     let foundPerson = people.filter(function (person) {
         if (person.firstName === firstName && person.lastName === lastName) {
@@ -114,7 +109,6 @@ function searchByName(people) {
     return foundPerson;
 }
 // End of searchByName()
-
 /**
  * This function will be useful for STRINGIFYING a collection of person-objects
  * first and last name properties in order to easily send the information
@@ -131,7 +125,6 @@ function displayPeople(people) {
     );
 }
 // End of displayPeople()
-
 /**
  * This function will be useful for STRINGIFYING a person-object's properties ////////////////////////////////////////////////////////
  * in order to easily send the information to the user in the form of an alert().
@@ -152,7 +145,6 @@ function displayPerson(person) {
     alert(personInfo);
 }
 // End of displayPerson()
-
 /**
  * This function's purpose is twofold:
  * First, to generate a prompt with the value passed in to the question parameter.
@@ -168,7 +160,6 @@ function promptFor(question, valid) {
     return response;
 }
 // End of promptFor()
-
 /**
  * This helper function checks to see if the value passed into input is a "yes" or "no."
  * @param {String} input        A string that will be normalized via .toLowerCase().
@@ -178,7 +169,6 @@ function yesNo(input) {
     return input.toLowerCase() === "yes" || input.toLowerCase() === "no";
 }
 // End of yesNo()
-
 /**
  * This helper function operates as a default callback for promptFor's validation.
  * Feel free to modify this to suit your needs.
@@ -186,14 +176,11 @@ function yesNo(input) {
  * @returns {Boolean}           Default validation -- no logic yet.
  */
 function chars(input) {
-    let input = searchResults
     return true; // Default validation only
 }
 // End of chars()
-
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
-
 function searchByTraits(people) {
     let searchResults;
     let userInput = prompt("What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?");
@@ -234,10 +221,8 @@ function searchByTraits(people) {
         return searchResults;
 }
 }    
-
 function searchByGender(people) {
     let gender = promptFor("What is the person's gender?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.gender === gender) {
             // displayPerson(person)
@@ -246,10 +231,8 @@ function searchByGender(people) {
     });
     return foundPerson;
 }
-
 function searchByEyeColor(people) {
     let eyeColor = promptFor("What is the person's eye color?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.eyeColor === eyeColor) {
             return true;
@@ -257,10 +240,8 @@ function searchByEyeColor(people) {
     });
     return foundPerson;
 }
-
 function searchByOccupation(people) {
     let occupation = promptFor("What is the person's occupation?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.occupation === occupation) {
             return true;
@@ -268,10 +249,8 @@ function searchByOccupation(people) {
     });
     return foundPerson;
 }
-
 function searchByHeight(people) {
     let height = promptFor("What is the person's height?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.height === height) {
             return true;
@@ -279,10 +258,8 @@ function searchByHeight(people) {
     });
     return foundPerson;
 }
-
 function searchByWeight(people) {
     let weight = promptFor("What is the person's weight?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.weight === weight) {
             return true;
@@ -290,7 +267,6 @@ function searchByWeight(people) {
     });
     return foundPerson;
 }
-
 function searchByDateOfBirth(people) {
     let dob = promptFor("Whatis the date of birth of the person your searching for? Please eneter month(2-digit)/day(2-digit)/year(4-digit)", chars)
     
@@ -301,23 +277,17 @@ function searchByDateOfBirth(people) {
     })
     return foundPerson
 }
-
 function findPersonFamily(people) {
     foundPerson
 }
-
 function findPersonDescendants(person, people) {
     
 }
-
 function findSpouse(person) {
-
 }
-
 function findChildren(person) {
-
 }
-
 function findSiblings(person) {
-    
 }
+Collapse
+
