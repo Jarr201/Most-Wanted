@@ -146,6 +146,8 @@ function displayPerson(person) {
     personInfo += `Eye Color: ${person.eyeColor}\n`;
     personInfo += `Occupation: ${person.occupation}\n`;
     personInfo += `Date of Birth: ${person.dob}\n`;
+    personInfo += `id: ${person.id}\n`;
+    // personInfo += `Current Spouse: ${person.currentSpouse}\n`;
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
@@ -184,7 +186,8 @@ function yesNo(input) {
  * @returns {Boolean}           Default validation -- no logic yet.
  */
 function chars(input) {
-    return true; // Default validation only
+    return input;
+    // return true; // Default validation only
 }
 // End of chars()
 
@@ -193,9 +196,7 @@ function chars(input) {
 
 function searchByTraits(people) {
     let searchResults;
-    let userInput = prompt(
-        "What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?"
-    );
+    let userInput = prompt("What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?", chars);
     userInput = userInput.toLowerCase();
     switch(userInput) {
         case "gender":
@@ -302,7 +303,7 @@ function searchByDateOfBirth(people) {
 }
 
 function findPersonFamily(people) {
-    displayPeople(people)
+    people = displayPerson(id)
 }
 
 function findPersonDescendants(people) {
