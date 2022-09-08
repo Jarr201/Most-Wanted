@@ -145,7 +145,7 @@ function displayPerson(person) {
     personInfo += `Weight: ${person.weight}\n`;
     personInfo += `Eye Color: ${person.eyeColor}\n`;
     personInfo += `Occupation: ${person.occupation}\n`;
-    // personInfo += `Date of Birth: ${person.dob}\n`;
+    personInfo += `Date of Birth: ${person.dob}\n`;
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
@@ -202,30 +202,26 @@ function searchByTraits(people) {
             searchResults = searchByGender(people);
             displayPeople(people)
             break;
-        // case "date of birth": 
-        //     searchResults = searchByDateOfBirth(people);
-        //     if(searchResults.length === 0){
-        //         alert('No match for your search')
-        //         app(people)
-        //     }else
-        //         displayTraitPeople(searchResults)
-        //         break;
+        case "date of birth": 
+            searchResults = searchByDateOfBirth(people);
+            displayPeople(people)
+            break;
         case "weight":
             searchResults = searchByWeight(people);
             displayPeople(people)
-                break;
+            break;
         case "height":
             searchResults = searchByHeight(people);
             displayPeople(people)
-                break;
+            break;
         case "eye color":
             searchResults = searchByEyeColor(people);
             displayPeople(people)
-                break;
+            break;
         case "occupation":
             searchResults = searchByOccupation(people);
             displayPeople(people)
-                break;
+            break;
         default:
             alert("Invalid Input");
             break};   
@@ -243,6 +239,7 @@ function searchByGender(people) {
 
     let foundPerson = people.filter(function (person) {
         if (person.gender === gender) {
+            // displayPerson(person)
             return true;
         }
     });
@@ -293,17 +290,19 @@ function searchByWeight(people) {
     return foundPerson;
 }
 
-// function searchByDateOfBirth(people) {}
-
-function findPersonFamily(people) {
-    let personFamily
+function searchByDateOfBirth(people) {
+    let dob = promptFor("Whatis the date of birth of the person your searching for? Please eneter month(2-digit)/day(2-digit)/year(4-digit)", chars)
     
-    let foundPerson = people.filter(function (person) {
-        if (person.parents) {
+    let foundperson = people.filter(function (person) {
+        if (person.dob == dob) {
             return true;
         }
-    });
-    return foundPerson;
+    })
+    return foundperson
+}
+
+function findPersonFamily(people) {
+    displayPeople(people)
 }
 
 function findPersonDescendants(people) {
