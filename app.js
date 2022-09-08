@@ -3,12 +3,10 @@
     Description: Most Wanted Starter Code
 */
 //////////////////////////////////////////* Beginning Of Starter Code *//////////////////////////////////////////
-
 "use strict";
 //? Utilize the hotkey to hide block level comment documentation
 ////* Mac: Press "CMD"+"K" and then "CMD"+"/"
 ////* PC: Press "CTRL"+"K" and then "CTRL"+"/"
-
 /**
  * This is the main logic function being called in index.html.
  * It operates as the entry point for our entire application and allows
@@ -41,8 +39,8 @@ function app(people) {
     // Calls the mainMenu() only AFTER we find the SINGLE PERSON
     mainMenu(searchResults, people);
 }
-// End of app()
 
+// End of app()
 /**
  * After finding a single person, we pass in the entire person-object that we found,
  * as well as the entire original dataset of people. We need people in order to find
@@ -93,8 +91,8 @@ function mainMenu(person, people) {
             return mainMenu(person, people);
     }
 }
-// End of mainMenu()
 
+// End of mainMenu()
 /**
  * This function is used when searching the people collection by
  * a person-object's firstName and lastName properties.
@@ -104,7 +102,6 @@ function mainMenu(person, people) {
 function searchByName(people) {
     let firstName = promptFor("What is the person's first name?", chars);
     let lastName = promptFor("What is the person's last name?", chars);
-
     // The foundPerson value will be of type Array. Recall that .filter() ALWAYS returns an array.
     let foundPerson = people.filter(function (person) {
         if (person.firstName === firstName && person.lastName === lastName) {
@@ -113,8 +110,8 @@ function searchByName(people) {
     });
     return foundPerson;
 }
-// End of searchByName()
 
+// End of searchByName()
 /**
  * This function will be useful for STRINGIFYING a collection of person-objects
  * first and last name properties in order to easily send the information
@@ -130,8 +127,8 @@ function displayPeople(people) {
             .join("\n")
     );
 }
-// End of displayPeople()
 
+// End of displayPeople()
 /**
  * This function will be useful for STRINGIFYING a person-object's properties ////////////////////////////////////////////////////////
  * in order to easily send the information to the user in the form of an alert().
@@ -151,8 +148,8 @@ function displayPerson(person) {
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
-// End of displayPerson()
 
+// End of displayPerson()
 /**
  * This function's purpose is twofold:
  * First, to generate a prompt with the value passed in to the question parameter.
@@ -167,8 +164,8 @@ function promptFor(question, valid) {
     } while (!response || !valid(response));
     return response;
 }
-// End of promptFor()
 
+// End of promptFor()
 /**
  * This helper function checks to see if the value passed into input is a "yes" or "no."
  * @param {String} input        A string that will be normalized via .toLowerCase().
@@ -177,8 +174,8 @@ function promptFor(question, valid) {
 function yesNo(input) {
     return input.toLowerCase() === "yes" || input.toLowerCase() === "no";
 }
-// End of yesNo()
 
+// End of yesNo()
 /**
  * This helper function operates as a default callback for promptFor's validation.
  * Feel free to modify this to suit your needs.
@@ -188,11 +185,10 @@ function yesNo(input) {
 function chars(input) {
     return true; // Default validation only
 }
-// End of chars()
 
+// End of chars()
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
-
 function searchByTraits(people) {
     let searchResults;
     let userInput = prompt("What trait would you like to search for Gender, Date Of Birth, Weight, Height, Eye Color, or Occupation?");
@@ -236,7 +232,6 @@ function searchByTraits(people) {
 
 function searchByGender(people) {
     let gender = promptFor("What is the person's gender?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.gender === gender) {
             // displayPerson(person)
@@ -248,7 +243,6 @@ function searchByGender(people) {
 
 function searchByEyeColor(people) {
     let eyeColor = promptFor("What is the person's eye color?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.eyeColor === eyeColor) {
             return true;
@@ -259,7 +253,6 @@ function searchByEyeColor(people) {
 
 function searchByOccupation(people) {
     let occupation = promptFor("What is the person's occupation?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.occupation === occupation) {
             return true;
@@ -270,7 +263,6 @@ function searchByOccupation(people) {
 
 function searchByHeight(people) {
     let height = promptFor("What is the person's height?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.height === height) {
             return true;
@@ -281,7 +273,6 @@ function searchByHeight(people) {
 
 function searchByWeight(people) {
     let weight = promptFor("What is the person's weight?", chars);
-
     let foundPerson = people.filter(function (person) {
         if (person.weight === weight) {
             return true;
@@ -305,10 +296,12 @@ function searchByDateOfBirth(people) {
 //     foundPerson
 // }
 
+function findPersonFamily(people) {
+    foundPerson
+}
 function findPersonDescendants(person, people) {
     
 }
-
 function findSpouse(person) {
     for (let spouse = 0; spouse < spouses.length; spouse++) {
         if (person.id == person.currentSpouse) {
@@ -321,7 +314,6 @@ function findSpouse(person) {
 }
 
 function findChildren(person) {
-
 }
 
 function findSiblings(person) {
