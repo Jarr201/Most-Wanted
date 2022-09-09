@@ -144,7 +144,7 @@ function displayPerson(person) {
     personInfo += `Occupation: ${person.occupation}\n`;
     personInfo += `Date of Birth: ${person.dob}\n`;
     personInfo += `id: ${person.id}\n`;
-    personInfo += `Current Spouse: ${person.currentSpouse}\n`;
+    // personInfo += `Current Spouse: ${person.currentSpouse}\n`;
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
@@ -292,30 +292,35 @@ function searchByDateOfBirth(people) {
     return foundPerson
 }
 
-// function findPersonFamily(people) {
-//     foundPerson
+function findPersonFamily(people) {
+    findSpouse(people)
+}
+
+// function findPersonDescendants(person, people) {
+    
 // }
 
-function findPersonFamily(people) {
-    foundPerson
-}
-function findPersonDescendants(person, people) {
+function findSpouse(person, people) {
+    // for (let spouse = 0; spouse < people.length; spouse++) {
+    //     if (person.id == person.currentSpouse) {
+    //         return "Married to no one.";
+    //     }
+    //     else if (person.id == people[spouse].currentSpouse) {
+    //         return people[spouse];
+    //     }
+    // }
+    let spouse = people.filter(function (person) {
+        if (person.currentSpouse === person.id) {
+            return true;
+        }
+    })
     
-}
-function findSpouse(person) {
-    for (let spouse = 0; spouse < spouses.length; spouse++) {
-        if (person.id == person.currentSpouse) {
-            return "Married to no one.";
-        }
-        else if (person.id == spouses[spouse].currentSpouse) {
-            return spouses[spouse];
-        }
-    }
+    return spouse
 }
 
-function findChildren(person) {
+function findChildren(person, people, ) {
 }
 
-function findSiblings(person) {
+function findSiblings(person, people) {
 
 }
