@@ -39,7 +39,6 @@ function app(people) {
     // Calls the mainMenu() only AFTER we find the SINGLE PERSON
     mainMenu(searchResults, people);
 }
-
 // End of app()
 /**
  * After finding a single person, we pass in the entire person-object that we found,
@@ -91,7 +90,6 @@ function mainMenu(person, people) {
             return mainMenu(person, people);
     }
 }
-
 // End of mainMenu()
 /**
  * This function is used when searching the people collection by
@@ -110,7 +108,6 @@ function searchByName(people) {
     });
     return foundPerson;
 }
-
 // End of searchByName()
 /**
  * This function will be useful for STRINGIFYING a collection of person-objects
@@ -127,7 +124,6 @@ function displayPeople(people) {
             .join("\n")
     );
 }
-
 // End of displayPeople()
 /**
  * This function will be useful for STRINGIFYING a person-object's properties ////////////////////////////////////////////////////////
@@ -144,11 +140,11 @@ function displayPerson(person) {
     personInfo += `Occupation: ${person.occupation}\n`;
     personInfo += `Date of Birth: ${person.dob}\n`;
     personInfo += `id: ${person.id}\n`;
-    // personInfo += `Current Spouse: ${person.currentSpouse}\n`;
+    personInfo += `Current Spouse: ${person.currentSpouse}\n`;
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
+    return personInfo;
 }
-
 // End of displayPerson()
 /**
  * This function's purpose is twofold:
@@ -164,7 +160,6 @@ function promptFor(question, valid) {
     } while (!response || !valid(response));
     return response;
 }
-
 // End of promptFor()
 /**
  * This helper function checks to see if the value passed into input is a "yes" or "no."
@@ -174,7 +169,6 @@ function promptFor(question, valid) {
 function yesNo(input) {
     return input.toLowerCase() === "yes" || input.toLowerCase() === "no";
 }
-
 // End of yesNo()
 /**
  * This helper function operates as a default callback for promptFor's validation.
@@ -185,7 +179,6 @@ function yesNo(input) {
 function chars(input) {
     return true; // Default validation only
 }
-
 // End of chars()
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
@@ -229,7 +222,6 @@ function searchByTraits(people) {
         return searchResults;
 }
 }    
-
 function searchByGender(people) {
     let gender = promptFor("What is the person's gender?", chars);
     let foundPerson = people.filter(function (person) {
@@ -240,7 +232,6 @@ function searchByGender(people) {
     });
     return foundPerson;
 }
-
 function searchByEyeColor(people) {
     let eyeColor = promptFor("What is the person's eye color?", chars);
     let foundPerson = people.filter(function (person) {
@@ -250,7 +241,6 @@ function searchByEyeColor(people) {
     });
     return foundPerson;
 }
-
 function searchByOccupation(people) {
     let occupation = promptFor("What is the person's occupation?", chars);
     let foundPerson = people.filter(function (person) {
@@ -260,7 +250,6 @@ function searchByOccupation(people) {
     });
     return foundPerson;
 }
-
 function searchByHeight(people) {
     let height = promptFor("What is the person's height?", chars);
     let foundPerson = people.filter(function (person) {
@@ -270,7 +259,6 @@ function searchByHeight(people) {
     });
     return foundPerson;
 }
-
 function searchByWeight(people) {
     let weight = promptFor("What is the person's weight?", chars);
     let foundPerson = people.filter(function (person) {
@@ -280,9 +268,8 @@ function searchByWeight(people) {
     });
     return foundPerson;
 }
-
 function searchByDateOfBirth(people) {
-    let dob = promptFor("Whatis the date of birth of the person your searching for? Please eneter month(2-digit)/day(2-digit)/year(4-digit)", chars)
+    let dob = promptFor("What is the date of birth of the person your searching for? Please eneter month(2-digit)/day(2-digit)/year(4-digit)", chars)
     
     let foundPerson = people.filter(function (person) {
         if (person.dob == dob) {
@@ -291,25 +278,19 @@ function searchByDateOfBirth(people) {
     })
     return foundPerson
 }
-
 function findPersonFamily(person, people) {
     let personInfo = `Parents: ${person.parents}\n`
-    personInfo += `Current spouse: ${person.currentSpouse}\n`
+    personInfo += `Current Spouse: ${findSpouse(person, people)}\n`
     alert(personInfo);
-
 }
-
 function findPersonDescendants(person, people) {
     
 }
-
 function findSpouse(person, people) {
-    let searchResults;
-    let currentSpouse = people.filter(function() {
-        if (person.currentSpouse === currentSpouse) {
-            return true;
-        }
-    });
-    return currentSpouse;
+let spouse = people.filter(function (el) {
+    if (person.currentSpouse === el.id)
+        return true;
+})
+// console.log(spouse)
+return(`${spouse.firstName} ${spouse.lastName}`);
 }
-    
