@@ -296,37 +296,20 @@ function findPersonFamily(person, people) {
     let personInfo = `Parents: ${person.parents}\n`
     personInfo += `Current spouse: ${person.currentSpouse}\n`
     alert(personInfo);
+
 }
 
-// function findPersonDescendants(person, people) {
+function findPersonDescendants(person, people) {
     
-// }
+}
 
 function findSpouse(person, people) {
-    for (let spouse = 0; spouse < people.length; spouse++) {
-        if (person.id == person.currentSpouse) {
-            return "Married to no one.";
+    let searchResults;
+    let currentSpouse = people.filter(function() {
+        if (person.currentSpouse === currentSpouse) {
+            return true;
         }
-        else if (person.id == people[spouse].currentSpouse) {
-            return people[spouse];
-        }
-    }
-//     let spouse = people.filter((item) => {
-//         if (person.currentSpouse === item.id) {
-//             return true;
-//         }
-//     })
-//     if (spouse.length === 0) {
-//         alert("Married to no one")
-//     } else {
-//         alert(`${person.firstName} is married to ${spouse[0]['firstName']} ${spouse[0]['lastName']}`)
-//     }
-//     return spouse;
+    });
+    return currentSpouse;
 }
-
-function findChildren(person, people, ) {
-}
-
-function findSiblings(person, people) {
-
-}
+    
